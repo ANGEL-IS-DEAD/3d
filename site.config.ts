@@ -148,8 +148,8 @@ export const seo = {
   keywords: ["Archie is me", "exploring", "Monaco", "bleh", "let's E-SEX"],
 
   /** TODO — social share image (1200×630 recommended). Path under /public. */
-  ogImage: "/og-image.svg",
-  ogImageAlt: "Your Brand — your tagline",
+  ogImage: "/nom.js",
+  ogImageAlt: "bleh..whatever..",
 
   /** Browser chrome colour on mobile. Match your --bg token. */
   themeColor: "#000000",
@@ -207,13 +207,13 @@ export function navTargetFor(target: number): number {
 
 export const hero = {
   /** TODO — small spaced-out word above the wordmark. "" hides it. */
-  eyebrow: "WELCOME",
+  eyebrow: WELCOME,
 
   /** TODO — the large cursive wordmark. Keep it to one short word. */
-  wordmark: "Brand",
+  wordmark: "Archie",
 
   /** TODO — the line under the divider rules. "" hides it. */
-  tagline: "YOUR TAGLINE GOES HERE",
+  tagline: What should i even say? i love my gf, perhaps,
 } as const;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -233,11 +233,11 @@ export const copyPanels: CopyPanel[] = [
     valign: "bottom",
     rule: true,
     lines: [
-      { text: "Your opening statement" },
-      { text: "goes right here, and it" },
-      { text: "should land in one breath.", accent: true },
+      { text: "well I just wanted to say" },
+      { text: "thank you, to all the good people who" },
+      { text: "supported me throughout my journey.", accent: true },
     ],
-    caption: "A SUPPORTING LINE IN SMALL CAPS",
+    caption: "THOUGH I LOVE YA'LL BUT I LOVE MY GF MORE..",
   },
   {
     id: "value",
@@ -247,11 +247,11 @@ export const copyPanels: CopyPanel[] = [
     valign: "center",
     rule: true,
     lines: [
-      { text: "The second idea," },
-      { text: "stated plainly," },
-      { text: "in three short lines." },
+      { text: "and well if i ever disappear," },
+      { text: "just know that i tried my best," },
+      { text: "and in the end i still lost." },
     ],
-    caption: "ANOTHER SMALL CAPS SUPPORTING LINE",
+    caption: "BUT CHEER UP, I'M STILL HERE.",
   },
   {
     id: "promise",
@@ -260,9 +260,9 @@ export const copyPanels: CopyPanel[] = [
     align: "center",
     valign: "center",
     lines: [
-      { text: "A promise your visitor" },
-      { text: "already wants to believe" },
-      { text: "is waiting for them here.", accent: true },
+      { text: "You'll have to promise me though.." },
+      { text: "That you'll try your best?" },
+      { text: "Not for anyone else, but yourself", accent: true },
     ],
   },
   {
@@ -272,10 +272,10 @@ export const copyPanels: CopyPanel[] = [
     align: "left",
     valign: "center",
     lines: [
-      { text: "First principle." },
-      { text: "Second principle." },
-      { text: "Third principle." },
-      { text: "The one that matters.", accent: true },
+      { text: "let's talk about my interests.." },
+      { text: "I love anime, games, webtoons/manga coding" },
+      { text: "i Love AI, I love ya'll." },
+      { text: "Though I love my gf more... :3", accent: true },
     ],
   },
   {
@@ -286,9 +286,9 @@ export const copyPanels: CopyPanel[] = [
     valign: "center",
     variant: "statement",
     lines: [
-      { text: "A closing thought, one sentence long." },
-      { text: "Then the turn.", accent: true },
-      { text: "And the line that sends them to the CTA." },
+      { text: "so..well it's kinda hard to explain..but you know." },
+      { text: "everyone has their own issues...", accent: true },
+      { text: "like i have a lil problem..but that's a secret..hehe" },
     ],
   },
 ];
@@ -303,12 +303,12 @@ export const copyPanels: CopyPanel[] = [
  * so a mix of portrait and landscape looks best. 3+ images required.
  */
 const galleryImages: GalleryImage[] = [
-  { src: "/gallery/placeholder-01.svg", alt: "" },
+  { src: "/gallery/placeholder-01.jpg", alt: "" },
   { src: "/gallery/placeholder-02.svg", alt: "" },
   { src: "/gallery/placeholder-03.svg", alt: "" },
-  { src: "/gallery/placeholder-04.svg", alt: "" },
+  { src: "/gallery/placeholder-04.jpg", alt: "" },
   { src: "/gallery/placeholder-05.svg", alt: "" },
-  { src: "/gallery/placeholder-06.svg", alt: "" },
+  { src: "/gallery/placeholder-06.jpg", alt: "" },
 ];
 
 export const gallery = {
@@ -320,7 +320,7 @@ export const gallery = {
   title: "Gallery",
 
   /** Small hint under the counter. */
-  hint: "tap to browse",
+  hint: "Tap it",
 
   images: galleryImages,
 };
@@ -334,22 +334,22 @@ const eventItems: EventItem[] = [
   {
     day: "01",
     month: "MON",
-    name: "Event One",
+    name: "no events you idiots",
     description:
-      "A single sentence describing the event and why someone should come.",
-    detail: "Detail line · Capacity or price",
+      "bleh..no events.. I'll update it from time to time..",
+    detail: "you can join my server though · https://discord.gg/UWANhmZQgx",
     status: "OPEN",
     statusColor: "#86efac",
-    // href: "https://example.com/tickets",
+    href: "https://discord.gg/UWANhmZQgx",
   },
   {
     day: "02",
     month: "TUE",
-    name: "Event Two",
+    name: "YUP STILL NO EVENTS..",
     description:
-      "Another sentence about a second event, in the same voice as the first.",
-    detail: "Detail line · Capacity or price",
-    status: "FILLING UP",
+      "WHAT TF SHOULD I EVEN PUT HERE??",
+    detail: "more bleh.. · MUHEHEHE",
+    status: "IT'S OPEN",
     statusColor: "#fbbf24",
   },
 ];
@@ -360,10 +360,10 @@ export const events = {
   end: 0.82,
 
   /** TODO — small uppercase label above the heading. */
-  eyebrow: "Upcoming",
+  eyebrow: "join the server :3",
 
   /** TODO — the card heading. */
-  title: "What's on.",
+  title: "Nothing's on.",
 
   items: eventItems,
 };
@@ -379,29 +379,29 @@ export const events = {
 const socials: SocialLink[] = [
   {
     platform: "Instagram",
-    handle: "@yourhandle",
-    href: "https://instagram.com/yourhandle",
+    handle: "@secret",
+    href: "https://discord.gg/UWANhmZQgx",
     color: "#E1306C",
     icon: "instagram",
   },
   {
     platform: "TikTok",
-    handle: "@yourhandle",
-    href: "https://www.tiktok.com/@yourhandle",
+    handle: "@anothersecret",
+    href: "https://discord.gg/UWANhmZQgx",
     color: "#69C9D0",
     icon: "tiktok",
   },
   {
     platform: "YouTube",
-    handle: "@yourhandle",
-    href: "https://www.youtube.com/@yourhandle",
+    handle: "secretsss",
+    href: "https://discord.gg/UWANhmZQgx",
     color: "#FF4444",
     icon: "youtube",
   },
   {
     platform: "Email",
-    handle: "hello@example.com",
-    href: "mailto:hello@example.com",
+    handle: "bleh, don't click..",
+    href: "https://discord.gg/UWANhmZQgx",
     color: "#7C4FE8",
     icon: "email",
   },
@@ -414,16 +414,16 @@ const socials: SocialLink[] = [
 const contactRows: ContactRow[] = [
   {
     label: "Direct",
-    value: "+00 000 000 0000",
-    href: "https://wa.me/00000000000",
+    value: "i ain't giving you that..",
+    href: "yuh no",
     color: "#25D366",
     icon: "whatsapp",
     emphasis: "subtle",
   },
   {
     label: "Join the Community",
-    value: "Group Chat",
-    href: "https://example.com/community",
+    value: "don't touch i said..",
+    href: "https://discord.gg/UWANhmZQgx",
     color: "#a78bfa",
     icon: "community",
     emphasis: "feature",
@@ -436,10 +436,10 @@ export const contact = {
   end: 1.0,
 
   /** TODO — small uppercase label above the heading. */
-  eyebrow: "Your Brand",
+  eyebrow: "Archie :3",
 
   /** TODO — the card heading. */
-  title: "Get in touch.",
+  title: "Bleh.",
 
   socials,
   rows: contactRows,
