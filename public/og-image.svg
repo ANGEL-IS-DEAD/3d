@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Social share placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141020"/>
+      <stop offset="55%" stop-color="#0a0810"/>
+      <stop offset="100%" stop-color="#1d1430"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="22%" cy="26%" r="72%">
+      <stop offset="0%" stop-color="#5b2fd6" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#5b2fd6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="84%" cy="86%" r="60%">
+      <stop offset="0%" stop-color="#c9a96e" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#c9a96e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <rect x="24" y="24" width="1152" height="582" fill="none" stroke="#c9a96e" stroke-opacity="0.20" stroke-width="2"/>
+
+  <text x="600" y="252" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="26" letter-spacing="18" fill="#ffffff" fill-opacity="0.55">REPLACE THIS IMAGE</text>
+
+  <text x="600" y="356" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-size="82" font-style="italic" fill="#e8c988">Your Brand</text>
+
+  <g stroke="#c9a96e" stroke-opacity="0.6" stroke-width="2">
+    <line x1="430" y1="404" x2="530" y2="404"/>
+    <line x1="670" y1="404" x2="770" y2="404"/>
+  </g>
+  <text x="600" y="411" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="20" letter-spacing="10" fill="#c9a96e">CITY</text>
+
+  <text x="600" y="474" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="22" letter-spacing="6" fill="#ffffff" fill-opacity="0.42">YOUR TAGLINE GOES HERE</text>
+
+  <text x="600" y="546" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="16" letter-spacing="4" fill="#ffffff" fill-opacity="0.22">1200 &#215; 630 &#183; set seo.ogImage in site.config.ts</text>
+</svg>

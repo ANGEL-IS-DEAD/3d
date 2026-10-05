@@ -1,0 +1,326 @@
+/* Global styles & design tokens — Tailwind import, CSS custom properties (colours, radii,
+   shadows, font variables), base resets, the custom-cursor hide rule, glass surfaces and keyframes. */
+@import "tailwindcss";
+
+:root {
+  /* ── Layered blacks (foundation — never one flat color) ─────────────────── */
+  --black:    #000000;
+  --black-2:  #050505;
+  --black-3:  #0a0a0a;
+  --black-4:  #111111;
+  --black-5:  #181818;
+
+  /* Legacy aliases (kept so existing rules don't break) */
+  --bg: #000000;
+  --bg-soft: #0a0a0a;
+
+  /* ── Text ──────────────────────────────────────────────────────────────── */
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.62);
+  --text-dim: rgba(255, 255, 255, 0.32);
+
+  /* ── Brand purple (signature / interactive) ────────────────────────────── */
+  --purple: #3900a4;
+  --purple-bright: #5b2fd6;   /* lighter — for glows, particles, lit accents */
+  --purple-soft: #7a5be0;     /* hover text / soft highlights */
+  --purple-dim: rgba(57, 0, 164, 0.5);
+  --purple-glow: rgba(91, 47, 214, 0.45);
+  --purple-tint: rgba(91, 47, 214, 0.12);
+
+  /* ── Accent orange (rare — excitement only) ────────────────────────────── */
+  --orange: #fd6100;
+  --orange-bright: #ff7a2e;
+  --orange-glow: rgba(253, 97, 0, 0.45);
+
+  /* ── Gold (preserved luxury accent) ────────────────────────────────────── */
+  --gold: #c9a96e;
+  --gold-dim: #8a7048;
+  --gold-bright: #e8c988;
+
+  /* ── Glass ─────────────────────────────────────────────────────────────── */
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-strong: rgba(20, 18, 28, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glass-blur: blur(16px);
+
+  /* ── Corner radius system ──────────────────────────────────────────────── */
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-hero: 32px;
+  --r-img: 24px;
+  --r-input: 18px;
+  --r-pill: 9999px;
+
+  /* ── Soft / ambient / purple-tinted shadows ────────────────────────────── */
+  --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --shadow-ambient: 0 20px 60px -12px rgba(0, 0, 0, 0.55);
+  --shadow-lift: 0 24px 70px -16px rgba(0, 0, 0, 0.6);
+  --shadow-purple: 0 18px 50px -12px rgba(57, 0, 164, 0.45);
+  --shadow-orange: 0 18px 50px -14px rgba(253, 97, 0, 0.4);
+
+  /* ── Motion easings ────────────────────────────────────────────────────── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Font families via next/font/google CSS variables */
+  --font-sans: var(--font-inter, "Inter", system-ui, sans-serif);
+  --font-serif: var(--font-cormorant, "Cormorant Garamond", Georgia, serif);
+  --font-cursive: var(--font-parisienne, "Parisienne", cursive);
+}
+
+/* Reset lives in the base layer so Tailwind's utility layer (p-*, m-*, etc.) can
+   override it. Previously this was unlayered, which silently beat every padding/margin
+   utility in the app. */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Lenis smooth scroll */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Typography utilities */
+.font-ui {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: var(--r-pill); }
+
+/* Selection */
+::selection {
+  background: var(--purple-glow);
+  color: #ffffff;
+}
+
+
+/* ─── Glass surfaces ─────────────────────────────────────────────────────── */
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+/* Frosted panel — for nav, dialogs, floating overlays */
+.glass-panel {
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  box-shadow: var(--shadow-ambient), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Premium card (floating object) ─────────────────────────────────────── */
+.card-premium {
+  background: linear-gradient(160deg, var(--black-5) 0%, var(--black-3) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-ambient);
+  transition: transform 0.55s var(--ease-out-expo),
+              box-shadow 0.55s var(--ease-out-expo),
+              border-color 0.55s var(--ease-out-expo);
+  will-change: transform;
+}
+.card-premium:hover {
+  transform: translateY(-6px);
+  border-color: var(--purple-dim);
+  box-shadow: var(--shadow-lift), var(--shadow-purple);
+}
+
+/* ─── Pill buttons ───────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: var(--r-pill);
+  background: var(--purple);
+  color: #ffffff;
+  border: 1px solid transparent;
+  padding: 0.85em 1.9em;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: transform 0.4s var(--ease-spring),
+              box-shadow 0.4s var(--ease-out-expo),
+              background-color 0.4s var(--ease-out-expo);
+  will-change: transform;
+}
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow-purple), var(--shadow-orange),
+              inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.btn-primary:active {
+  transform: translateY(0) scale(0.99);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: var(--r-pill);
+  background: var(--black-3);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.85em 1.9em;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  transition: transform 0.4s var(--ease-spring),
+              background-color 0.4s var(--ease-out-expo),
+              border-color 0.4s var(--ease-out-expo);
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: var(--purple);
+  border-color: var(--purple-bright);
+}
+
+/* ─── Chips / tags ───────────────────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-muted);
+  padding: 0.45em 1.05em;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background-color 0.4s var(--ease-out-expo),
+              color 0.4s var(--ease-out-expo),
+              border-color 0.4s var(--ease-out-expo),
+              transform 0.4s var(--ease-spring);
+}
+.chip:hover {
+  background: var(--purple);
+  border-color: var(--purple-bright);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ─── Gradient / glow dividers (no hard lines) ───────────────────────────── */
+.divider-glow {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--purple-glow) 30%,
+    rgba(255, 255, 255, 0.18) 50%,
+    var(--purple-glow) 70%,
+    transparent 100%);
+  filter: blur(0.3px);
+}
+
+/* ─── Hero animations ────────────────────────────────────────────────────── */
+
+/* Cursive "write-in" — clips from right to left like a pen moving across paper.
+   Negative inset values (-20px) give room for cursive descenders/tails so the
+   letter strokes never get hard-clipped at the bounding box edge. */
+@keyframes cursive-write {
+  0% {
+    clip-path: inset(-10px 110% -20px -10px);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(-10px -30px -20px -10px);  /* fully open, tails never clipped */
+    opacity: 1;
+  }
+}
+
+/* Soft fade-up for supporting hero elements */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gold shimmer that sweeps once across the hero wordmark after it finishes writing */
+@keyframes gold-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ─── Reveal animations (varied — not just fades) ─────────────────────────── */
+@keyframes reveal-blur-up {
+  from { opacity: 0; transform: translateY(22px) scale(0.98); filter: blur(10px); }
+  to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes nav-drop-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(-18px); filter: blur(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); filter: blur(0); }
+}
+@keyframes purple-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--purple-glow); }
+  50%      { box-shadow: 0 0 24px 2px var(--purple-glow); }
+}
+
+/* ─── Mobile adjustments ──────────────────────────────────────────────────── */
+
+/* Prevent double-tap zoom on interactive elements */
+button, a, input, select {
+  touch-action: manipulation;
+}
+
+/* Prevent page pull-to-refresh from interfering with scroll journey */
+html, body {
+  overscroll-behavior-y: none;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

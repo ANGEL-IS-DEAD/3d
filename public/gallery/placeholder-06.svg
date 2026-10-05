@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1250" viewBox="0 0 1000 1250" role="img" aria-label="Placeholder image 06">
+  <defs>
+    <linearGradient id="g06" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1622"/>
+      <stop offset="55%" stop-color="#12101a"/>
+      <stop offset="100%" stop-color="#221a2e"/>
+    </linearGradient>
+    <radialGradient id="r06" cx="26%" cy="22%" r="78%">
+      <stop offset="0%" stop-color="#5b2fd6" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#5b2fd6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="p06" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#c9a96e" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="1250" fill="url(#g06)"/>
+  <rect width="1000" height="1250" fill="url(#p06)"/>
+  <rect width="1000" height="1250" fill="url(#r06)"/>
+  <rect x="10" y="10" width="980" height="1230" fill="none" stroke="#c9a96e" stroke-opacity="0.22" stroke-width="2"/>
+
+  <g transform="translate(500 550)" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
+    <circle r="130" fill="none" stroke="#c9a96e" stroke-opacity="0.28" stroke-width="2"/>
+    <text y="50" font-size="140" fill="#c9a96e" fill-opacity="0.85" font-style="italic">06</text>
+  </g>
+
+  <text x="500" y="775" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="55" letter-spacing="18" fill="#ffffff" fill-opacity="0.42">REPLACE ME</text>
+  <text x="500" y="837" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="32" letter-spacing="10" fill="#ffffff" fill-opacity="0.24">PORTRAIT 4:5 &#183; 1000&#215;1250</text>
+</svg>
