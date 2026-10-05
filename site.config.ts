@@ -119,17 +119,17 @@ export interface ContactRow {
 
 export const brand = {
   /** TODO — your brand name. Used in the nav logo and as the SEO site name. */
-  name: "Your Brand",
+  name: "Archie",
 
   /** TODO — the nav wordmark. Kept short; the nav pill is small. */
-  wordmark: "brand",
+  wordmark: "angel",
 
   /** TODO — one-line positioning statement. Appears in <title> after the name. */
-  tagline: "Your Tagline Goes Here",
+  tagline: "me is me..i love coding and playing with new things..",
 
   /** TODO — short location/edition code shown between rules in the hero.
    *  Set to "" to hide that row entirely. */
-  locationCode: "CITY",
+  locationCode: "europe/Monaco",
 } as const;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -138,14 +138,14 @@ export const brand = {
 
 export const seo = {
   /** TODO — your production URL. Used to resolve relative OG image paths. */
-  url: "https://example.com",
+  url: "https://archie.web.int.yt",
 
   /** TODO — 150–160 characters. Shown in search results and link previews. */
   description:
-    "A one-paragraph description of what you do and who it is for. This text appears in search results and social link previews, so make the first sentence count.",
+    "So, well, I don't really do much... just create things that I find fun... feel free to share your idea's/Projects or if you need help, just hit me up.. :)",
 
   /** TODO — a handful of terms you want to rank for. */
-  keywords: ["your brand", "your category", "your city", "keyword", "keyword"],
+  keywords: ["Archie is me", "exploring", "Monaco", "bleh", "let's E-SEX"],
 
   /** TODO — social share image (1200×630 recommended). Path under /public. */
   ogImage: "/og-image.svg",
