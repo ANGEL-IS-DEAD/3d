@@ -207,13 +207,13 @@ export function navTargetFor(target: number): number {
 
 export const hero = {
   /** TODO — small spaced-out word above the wordmark. "" hides it. */
-  eyebrow: WELCOME,
+  eyebrow: "WELCOME",
 
   /** TODO — the large cursive wordmark. Keep it to one short word. */
   wordmark: "Archie",
 
   /** TODO — the line under the divider rules. "" hides it. */
-  tagline: What should i even say? i love my gf, perhaps,
+  tagline: "What should i even say? i love my gf, perhaps,",
 } as const;
 
 // ─────────────────────────────────────────────────────────────────────────────
