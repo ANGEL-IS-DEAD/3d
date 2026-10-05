@@ -5,7 +5,7 @@
   "description": "A cinematic scroll-driven 3D single-page website template. All content lives in site.config.ts.",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && rm -rf public && mkdir public && cp -r dist/. public/",
+    "build": "next build && rm -rf public && mkdir public && cp -r out/. public/",
     "start": "next start",
     "lint": "eslint"
   },
