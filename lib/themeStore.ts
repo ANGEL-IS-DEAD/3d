@@ -8,10 +8,10 @@
 export type ThemeMode = "day" | "night";
 
 export const themeState = {
-  night: 0, // target: 0 = day (light), 1 = night (dark) — 3D code eases toward this
+  night: 1, // target: 0 = day (light), 1 = night (dark) — 3D code eases toward this
 };
 
-let mode: ThemeMode = "day";
+let mode: ThemeMode = "night";
 type Listener = (mode: ThemeMode) => void;
 const listeners = new Set<Listener>();
 
